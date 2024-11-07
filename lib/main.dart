@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uber_app_ui_challenge/constant/app_routes.dart';
-import 'package:uber_app_ui_challenge/features/splash/splash_page.dart';
+import 'package:uber_app_ui_challenge/features/auth/pages/auth_page.dart';
+import 'package:uber_app_ui_challenge/features/splash/pages/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       ),
       // home: const SplashScreen(),
       routes: AppRoutes.instance.routes,
-      initialRoute: AppRoutes.instance.splashPage,
+      // initialRoute: AppRoutes.instance.splashPage,
+      initialRoute: AuthScreen.authScreen,
     );
   }
 }
