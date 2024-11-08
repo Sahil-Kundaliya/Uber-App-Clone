@@ -8,4 +8,12 @@ class AppImages {
   static const authFacebook = 'assets/images/logos_facebook.png';
   static const authPaytm = 'assets/images/Paytm.png';
   static const authGoogle = 'assets/images/auth_google.png';
+
+  // home
+  static const mapWithCars = 'assets/images/map_with_cars.png';
+  static const packageBox = 'assets/images/package_box.png';
+  static const packageLogo = 'assets/images/package_logo.png';
+  static const uberCar = 'assets/images/uber_car.png';
+
+
 }

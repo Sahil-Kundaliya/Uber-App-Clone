@@ -10,6 +10,7 @@ import 'package:uber_app_ui_challenge/features/auth/widgets/auth_number_widget.d
 import 'package:uber_app_ui_challenge/features/auth/widgets/auth_payment_widget.dart';
 import 'package:uber_app_ui_challenge/features/auth/widgets/auth_policy_widget.dart';
 import 'package:uber_app_ui_challenge/features/auth/widgets/auth_social_widget.dart';
+import 'package:uber_app_ui_challenge/features/home/pages/home_page.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(InitialAuthState());
@@ -94,7 +95,9 @@ class AuthCubit extends Cubit<AuthState> {
               Padding(
                 padding: const EdgeInsets.only(top: 25, bottom: 20),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamedAndRemoveUntil(context, HomeScreen.homeScreen, (route) => false,);
+                  },
                   child: Container(
                     height: 58,
                     width: double.infinity,
@@ -113,7 +116,9 @@ class AuthCubit extends Cubit<AuthState> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: Container(
                   height: 58,
                   width: double.infinity,
