@@ -31,9 +31,14 @@ class ConfirmPaymentScreen extends StatelessWidget {
                               fit: BoxFit.cover, AppImages.driveTime)),
                       Padding(
                         padding: const EdgeInsets.only(top: 20, left: 10),
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: Colors.grey,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.grey,
+                          ),
                         ),
                       )
                     ],
@@ -97,25 +102,19 @@ class ConfirmPaymentScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.grey),
                           ),
-                          trailing: GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(context,
-                                  ConfirmPaymentScreen.confirmPaymentScreen);
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: const Color(0xffEDF6FF))),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 5),
-                                child: Text(
-                                  'REG NO',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: const Color(0xffEDF6FF)),
-                                ),
+                          trailing: Container(
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: const Color(0xffEDF6FF))),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
+                              child: Text(
+                                'REG NO',
+                                style: GoogleFonts.roboto(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: const Color(0xffEDF6FF)),
                               ),
                             ),
                           ),

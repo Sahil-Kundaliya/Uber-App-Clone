@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uber_app_ui_challenge/constant/app_colors.dart';
 import 'package:uber_app_ui_challenge/constant/app_images.dart';
+import 'package:uber_app_ui_challenge/features/home/pages/home_page.dart';
 
 class ThankYouScreen extends StatelessWidget {
   const ThankYouScreen({super.key});
@@ -23,9 +24,17 @@ class ThankYouScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.arrow_back,
-                  color: Colors.grey,
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 10),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 100, bottom: 20),
@@ -76,8 +85,11 @@ class ThankYouScreen extends StatelessWidget {
                   child: Center(
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(
-                            context, ThankYouScreen.thankYouScreen);
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          HomeScreen.homeScreen,
+                          (route) => false,
+                        );
                       },
                       child: Container(
                         width: size.width * 0.8,

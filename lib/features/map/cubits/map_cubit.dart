@@ -11,6 +11,7 @@ class MapCubit extends Cubit<MapState> {
   int mapWidgetIndex = 0;
 
   changeMapWidgetIndex({required int value}) {
+    print('SSS $value');
     mapWidgetIndex = value;
     emit(UpdateMapState());
   }
@@ -18,13 +19,24 @@ class MapCubit extends Cubit<MapState> {
   Widget getMapWidget() {
     switch (mapWidgetIndex) {
       case 0:
-        return PlaceWidget();
+        return const PlaceWidget();
       case 1:
-        return MapWidget();
+        return const MapWidget();
       case 2:
-        return DriverRouteWidget();
+        return const DriverRouteWidget();
     }
     emit(UpdateMapState());
-    return SizedBox();
+    return const SizedBox();
+  }
+
+  void mapWidgetBackActions({required BuildContext context}) {
+    switch (mapWidgetIndex) {
+      case 0:
+        Navigator.pop(context);
+      case 1:
+        changeMapWidgetIndex(value: 0);
+      case 2:
+        changeMapWidgetIndex(value: 1);
+    }
   }
 }
