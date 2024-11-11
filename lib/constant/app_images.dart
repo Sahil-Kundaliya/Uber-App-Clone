@@ -20,4 +20,8 @@ class AppImages {
   static const driverProfile = 'assets/images/driver_profile.png';
   static const mapImage = 'assets/images/map_image.png';
   static const thankYouLogo = 'assets/images/thank_you_logo.png';
+
+  //drawer
+
+  static const inboxMessage = 'assets/images/inbox_message.png';
 }
