@@ -30,7 +30,7 @@ class ThankYouScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back,
                       color: Colors.grey,
                     ),
@@ -41,7 +41,7 @@ class ThankYouScreen extends StatelessWidget {
                   child: Container(
                     height: 283,
                     width: size.width,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage(AppImages.thankYouLogo))),
                   ),
@@ -77,7 +77,7 @@ class ThankYouScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(
                     bottom: 50,
@@ -93,7 +93,7 @@ class ThankYouScreen extends StatelessWidget {
                       },
                       child: Container(
                         width: size.width * 0.8,
-                        decoration: BoxDecoration(color: Color(0xff2B2B2B)),
+                        decoration: const BoxDecoration(color: Color(0xff2B2B2B)),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8),
                           child: Text(

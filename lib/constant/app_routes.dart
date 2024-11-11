@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:uber_app_ui_challenge/features/auth/pages/auth_page.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/account_page.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/messages_page.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/payment_page.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/uber_pass_page.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/your_tips_page.dart';
 import 'package:uber_app_ui_challenge/features/home/pages/confirm_package_page.dart';
 import 'package:uber_app_ui_challenge/features/home/pages/home_page.dart';
 import 'package:uber_app_ui_challenge/features/home/pages/select_package_page.dart';
@@ -32,5 +37,12 @@ class AppRoutes {
     ConfirmPaymentScreen.confirmPaymentScreen: (context) =>
         const ConfirmPaymentScreen(),
     ThankYouScreen.thankYouScreen: (context) => const ThankYouScreen(),
+
+    //drawer
+    AccountScreen.accountScreen: (context) => const AccountScreen(),
+    YourTipsScreen.yourTipsScreen: (context) => const YourTipsScreen(),
+    MessagesScreen.messagesScreen: (context) => const MessagesScreen(),
+    UberPassScreen.uberPassScreen: (context) => const UberPassScreen(),
+    PaymentScreen.paymentScreen: (context) => const PaymentScreen(),
   };
 }
