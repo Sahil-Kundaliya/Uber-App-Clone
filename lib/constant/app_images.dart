@@ -22,6 +22,16 @@ class AppImages {
   static const thankYouLogo = 'assets/images/thank_you_logo.png';
 
   //drawer
-
   static const inboxMessage = 'assets/images/inbox_message.png';
+
+  // uber pass
+  static const savingRide = 'assets/images/saving_ride.png';
+  static const rideCancel = 'assets/images/ride_cancel.png';
+  static const uberEats = 'assets/images/uber_eats.png';
+
+  // payment
+  static const personal = 'assets/images/Personal.png';
+  static const vouchers = 'assets/images/Vouchers.png';
+  static const promotions = 'assets/images/Promotions.png';
+  static const uberBusiness = 'assets/images/uber_business.png';
 }

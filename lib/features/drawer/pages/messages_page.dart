@@ -17,12 +17,12 @@ class MessagesScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(25, 15, 0, 0),
+            padding: const EdgeInsets.fromLTRB(25, 15, 0, 0),
             child: GestureDetector(
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_back,
                 size: 20,
                 color: Colors.grey,
@@ -41,7 +41,7 @@ class MessagesScreen extends StatelessWidget {
           ),
           Expanded(
               child: Container(
-            decoration: BoxDecoration(color: AppColors.backgroundColors),
+            decoration: const BoxDecoration(color: AppColors.backgroundColors),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uber_app_ui_challenge/constant/app_colors.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/account_page.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/messages_page.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/payment_page.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/uber_pass_page.dart';
+import 'package:uber_app_ui_challenge/features/drawer/pages/your_tips_page.dart';
 
 class CommonDrawer extends StatelessWidget {
   const CommonDrawer({super.key});
@@ -48,35 +53,41 @@ class CommonDrawer extends StatelessWidget {
                         const Divider(
                           color: Colors.grey,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Messages',
-                                  style: GoogleFonts.roboto(
-                                    color: const Color(0xffEDF6FF),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, MessagesScreen.messagesScreen);
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Messages',
+                                    style: GoogleFonts.roboto(
+                                      color: const Color(0xffEDF6FF),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 4, left: 8),
-                                  child: CircleAvatar(
-                                    radius: 4,
-                                    backgroundColor: AppColors.primary2Colors,
-                                  ),
-                                )
-                              ],
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              color: const Color(0xffEDF6FF),
-                            )
-                          ],
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.only(top: 4, left: 8),
+                                    child: CircleAvatar(
+                                      radius: 4,
+                                      backgroundColor: AppColors.primary2Colors,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: const Color(0xffEDF6FF),
+                              )
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -90,6 +101,7 @@ class CommonDrawer extends StatelessWidget {
                   ),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.pushNamed(context, YourTipsScreen.yourTipsScreen);
                   },
                 ),
                 ListTile(
@@ -100,6 +112,7 @@ class CommonDrawer extends StatelessWidget {
                   ),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.pushNamed(context, PaymentScreen.paymentScreen);
                   },
                 ),
                 ListTile(
@@ -110,6 +123,7 @@ class CommonDrawer extends StatelessWidget {
                   ),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.pushNamed(context, UberPassScreen.uberPassScreen);
                   },
                 ),
                 ListTile(
@@ -120,6 +134,7 @@ class CommonDrawer extends StatelessWidget {
                   ),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.pushNamed(context, AccountScreen.accountScreen);
                   },
                 ),
               ],
