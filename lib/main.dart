@@ -44,8 +44,8 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
         ),
         // home: const SplashScreen(),
         routes: AppRoutes.instance.routes,
-        // initialRoute: AppRoutes.instance.splashPage,
-        initialRoute: AccountScreen.accountScreen,
+        initialRoute: AppRoutes.instance.splashPage,
+        // initialRoute: AccountScreen.accountScreen,
       ),
     );
   }

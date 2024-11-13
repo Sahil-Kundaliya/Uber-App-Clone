@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uber_app_ui_challenge/constant/app_colors.dart';
 import 'package:uber_app_ui_challenge/constant/app_images.dart';
+import 'package:uber_app_ui_challenge/constant/app_routes.dart';
+import 'package:uber_app_ui_challenge/features/auth/pages/auth_page.dart';
 import 'package:uber_app_ui_challenge/features/splash/cubits/splash_cubit.dart';
 import 'package:uber_app_ui_challenge/features/splash/cubits/splash_state.dart';
 import 'package:uber_app_ui_challenge/core/utils/ticker_provider.dart';
@@ -148,51 +150,56 @@ class SplashScreen extends StatelessWidget {
                         child: Transform.translate(
                           offset: Offset(
                               size.width * (1 - state.getStartedAnimation), 0),
-                          child: Container(
-                            height: 58,
-                            width: size.width,
-                            margin: EdgeInsets.symmetric(
-                              horizontal: size.width * 0.1,
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              gradient: const LinearGradient(
-                                  colors: [
-                                    AppColors.primary1Colors,
-                                    AppColors.primary2Colors
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter),
-                              boxShadow: [
-                                BoxShadow(
-                                    offset: const Offset(-4, 4),
-                                    blurRadius: 4,
-                                    color: const Color(0xff000000)
-                                        .withOpacity(.25)),
-                                BoxShadow(
-                                    offset: const Offset(4, 4),
-                                    blurRadius: 4,
-                                    color: const Color(0xff000000)
-                                        .withOpacity(.25)),
-                              ],
-                            ),
-                            child: const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text('Get Started',
-                                    style: TextStyle(
-                                        color: AppColors.white,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 20)),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20.0),
-                                  child: Icon(
-                                    Icons.arrow_forward_sharp,
-                                    size: 35,
-                                    color: AppColors.white,
-                                  ),
-                                )
-                              ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(context, AuthScreen.authScreen);
+                            },
+                            child: Container(
+                              height: 58,
+                              width: size.width,
+                              margin: EdgeInsets.symmetric(
+                                horizontal: size.width * 0.1,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                gradient: const LinearGradient(
+                                    colors: [
+                                      AppColors.primary1Colors,
+                                      AppColors.primary2Colors
+                                    ],
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter),
+                                boxShadow: [
+                                  BoxShadow(
+                                      offset: const Offset(-4, 4),
+                                      blurRadius: 4,
+                                      color: const Color(0xff000000)
+                                          .withOpacity(.25)),
+                                  BoxShadow(
+                                      offset: const Offset(4, 4),
+                                      blurRadius: 4,
+                                      color: const Color(0xff000000)
+                                          .withOpacity(.25)),
+                                ],
+                              ),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text('Get Started',
+                                      style: TextStyle(
+                                          color: AppColors.white,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 20)),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 20.0),
+                                    child: Icon(
+                                      Icons.arrow_forward_sharp,
+                                      size: 35,
+                                      color: AppColors.white,
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
