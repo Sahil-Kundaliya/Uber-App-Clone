@@ -21,7 +21,7 @@ class AppRoutes {
   String splashPage = '/';
 
   Map<String, Widget Function(BuildContext)> routes = {
-    '/': (context) => const SplashScreen(),
+    '/': (context) =>  SplashScreen(),
     AuthScreen.authScreen: (context) => const AuthScreen(),
 
     //home
