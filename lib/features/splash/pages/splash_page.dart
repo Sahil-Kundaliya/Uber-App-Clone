@@ -10,9 +10,7 @@ import 'package:uber_app_ui_challenge/features/splash/cubits/splash_state.dart';
 import 'package:uber_app_ui_challenge/core/utils/ticker_provider.dart';
 
 class SplashScreen extends StatelessWidget {
-   SplashScreen({super.key});
-
-  final List<String> _list = ['1', '2', '3', '4', '5'];
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +44,6 @@ class SplashScreen extends StatelessWidget {
                           Stack(
                             children: [
                               // Arrows
-                            
                               Transform.translate(
                                 offset: Offset(
                                     size.width * (1 - state.arrowsAnimation),
@@ -109,49 +106,6 @@ class SplashScreen extends StatelessWidget {
                             ],
                           ),
                           // Safety row
-                            Container(
-    width: MediaQuery.of(context).size.width * 0.9,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Long Text here, which should overflow it\'s parent',
-         
-        ),
-        // SizedBox(height: 8),
-        Container(
-    width: MediaQuery.of(context).size.width * 0.30,
-    child: new DropdownButtonFormField<String>(
-      decoration: InputDecoration(
-        // labelStyle: new TextStyle(
-        //   overflow: TextOverflow.visible,
-        // ),
-        // label: TextField(
-        //   //maxLines: 1,
-        //   style: TextStyle(overflow: TextOverflow.visible,),
-        //   decoration: InputDecoration.collapsed(
-        //       hintText: ("[![Long Text here, which should overflow it's parent][1]][1]"),
-        //   ),
-        // ),
-        // label: Text(
-        //   ("Long Text here, which should overflow it's parent"),
-        //     overflow: TextOverflow.visible,
-        // ),
-      ),
-      isExpanded:true,
-      hint: Text("Select"),
-      items: _list.map((value) {
-        return new DropdownMenuItem<String>(
-          value: value,
-          child: new Text(value),
-        );
-      }).toList(),
-      onChanged: (value) {},
-    )
-),
-      ],
-    )
-),
                           Transform.translate(
                             offset: Offset(
                                 -size.width * (1 - state.safetyAnimation), 0),
